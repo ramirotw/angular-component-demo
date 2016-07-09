@@ -1,10 +1,12 @@
-class GithubProfileController {
+class GithubPageController {
   constructor($q, githubService) {
     this.$q = $q;
     this.githubService = githubService;
   }
 
   usernameChanged() {
+    this.profile = null;
+
     this.$q.all({
       profile: this.githubService.getUserProfile(this.username),
       repos: this.githubService.getPublicRepos(this.username)
@@ -17,6 +19,6 @@ class GithubProfileController {
   }
 }
 
-GithubProfileController.$inject = ['$q', 'githubService'];
+GithubPageController.$inject = ['$q', 'githubService'];
 
-export default GithubProfileController;
+export default GithubPageController;

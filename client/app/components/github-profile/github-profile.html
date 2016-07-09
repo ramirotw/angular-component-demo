@@ -1,0 +1,24 @@
+<md-card class="github-profile">
+  <md-card-title>
+    <md-card-title-text>
+      <span class="md-headline">Github Profile</span>
+      <span class="md-subhead">User: {{$ctrl.profile.login}}</span>
+      <span class="md-subhead">Email: {{$ctrl.profile.email}}</span>
+      <span class="md-subhead">Followers: {{$ctrl.profile.followers}}</span>
+      <span class="md-subhead">Following: {{$ctrl.profile.following}}</span>
+    </md-card-title-text>
+    <md-card-title-media>
+      <div class="md-media-lg">
+        <img src="{{$ctrl.profile.avatar_url}}" alt="">
+      </div>
+    </md-card-title-media>
+  </md-card-title>
+
+  <md-list class="md-dense" flex>
+    <md-subheader class="md-no-sticky">Public repos</md-subheader>
+    <md-list-item ng-repeat="repo in $ctrl.publicRepos">
+      <div class="md-list-item-text" layout="column">
+        <p>{{ repo.name }}</p>
+      </div>
+    </md-list-item>
+</md-card>
